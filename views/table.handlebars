@@ -1,0 +1,37 @@
+<div id="main" class="col-xl-8 col-sm-11 border border-success">
+            
+            <div id="form" class="form-control">
+                <form action="/add" method="POST">
+                    <input type="text" class="form-control" name="name" placeholder="Name"/>
+                    <input type="text" class="form-control" name="function" placeholder="Function" />
+                    <input type="number" class="form-control" name="wage" placeholder="Wage" />
+                    <button type="submit" class="btn btn-success">Register</button>
+                </form>
+            </div>
+
+            <div id="table">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Function</th>
+                        <th scope="col">Wage</th>
+                        <th>Deletion</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {{#each dados}}
+                      <tr>
+                        <th scope="row">{{cod_emp}}</th>
+                        <td>{{name}}</td>
+                        <td>{{function}}</td>
+                        <td>${{wage}}</td>
+                        <td><a href="/delete/{{cod_emp}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                      </tr>
+                    {{/each}}
+                    </tbody>
+                  </table>
+            </div>
+
+</div>
